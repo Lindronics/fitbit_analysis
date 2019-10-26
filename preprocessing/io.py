@@ -1,6 +1,6 @@
 """ IO
 
-This file contains helper functions loading tracker data.
+This file contains helper functions for loading tracker data.
 
 """
 
@@ -23,7 +23,7 @@ def load_json_file_flatten(path: str) -> pd.DataFrame:
     return data
 
 
-def load_files(path: str, keyword: str, load_fn: Callable[[str], pd.DataFrame]) -> pd.DataFrame:
+def load_files(path: str, keyword: str, load_fn: Callable[[str], pd.DataFrame] = load_json_file_flatten) -> pd.DataFrame:
     """ Loads and concatenates multiple JSON files.
 
     Arguments:
